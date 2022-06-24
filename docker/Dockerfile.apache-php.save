@@ -1,0 +1,8 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && \
+apt-get install
+run apt-get install apache2 -y && \
+apt-get install php libapache2-mod-php -y
+COPY ./info.php /var/www/html/cmd service apache2 start
